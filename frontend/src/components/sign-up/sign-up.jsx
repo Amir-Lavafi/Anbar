@@ -1,23 +1,46 @@
 import { useState } from "react";
 import { MDBBtn, MDBCard, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import warehousingDesktop from "../../assets/images/warehousing.png";
+import { signup } from "../../services/auth-service";
+import toast from "react-hot-toast";
 import "./sign-up.css";
 
 function SignUp() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirm_password: "",
+  });
 
-  const handleSignUp = () => {
-    console.log("Sign up attempt with:", { email, password });
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+
+    const signUpPromise = new Promise(async (resolve, reject) => {
+      try {
+        const result = await signup(formData);
+        resolve(result);
+      } catch (error) {
+        reject(error);
+      }
+    });
+
+    toast.promise(
+      async () => {
+        await signUpPromise;
+      },
+      {
+        loading: "Signing you up",
+        success: "Welcome aboard!",
+        error: (err) => {
+          return (
+            err.response?.data?.error || err.message || "Something went wrong"
+          );
+        },
+      }
+    );
   };
 
-  const handleGoogleSignUp = () => {
-    console.log("Google sign up");
-  };
-
-  const handleFacebookSignUp = () => {
-    console.log("Facebook sign up");
-  };
   return (
     <div className="sign-up-container">
       <MDBCard className="sign-up-card">
@@ -32,7 +55,24 @@ function SignUp() {
                 Streamline, Organize, and Succeed.
               </p>
 
-              <div className="form-container">
+              <form className="form-container" onSubmit={handleSignUp}>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="username">
+                    User Name
+                  </label>
+                  <input
+                    type="text"
+                    id="username"
+                    className="custom-input"
+                    placeholder="ExampleUserName"
+                    value={formData.username}
+                    onChange={(e) =>
+                      setFormData({ ...formData, username: e.target.value })
+                    }
+                    required
+                  />
+                </div>
+
                 <div className="form-group">
                   <label className="form-label" htmlFor="email">
                     Email
@@ -42,8 +82,10 @@ function SignUp() {
                     id="email"
                     className="custom-input"
                     placeholder="Example@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -56,32 +98,48 @@ function SignUp() {
                     type="password"
                     id="password"
                     className="custom-input"
-                    placeholder="At least 8 characters"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="At least 4 characters"
+                    value={formData.password}
+                    onChange={(e) =>
+                      setFormData({ ...formData, password: e.target.value })
+                    }
                     required
                   />
                 </div>
 
-                <MDBBtn className="sign-up-btn" onClick={handleSignUp}>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="confirm_password">
+                    Confirm Password
+                  </label>
+                  <input
+                    type="password"
+                    id="confirm_password"
+                    className="custom-input"
+                    placeholder="At least 4 characters"
+                    value={formData.confirm_password}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        confirm_password: e.target.value,
+                      })
+                    }
+                    required
+                  />
+                </div>
+
+                <MDBBtn className="sign-up-btn" type="submit">
                   Sign Up
                 </MDBBtn>
-              </div>
+              </form>
 
               <div className="separator mb-3">Or</div>
 
               <div className="social-buttons">
-                <button
-                  className="social-btn google-btn"
-                  onClick={handleGoogleSignUp}
-                >
+                <button className="social-btn google-btn" onClick={() => {}}>
                   <i className="fa-brands fa-google"></i>
                   Google
                 </button>
-                <button
-                  className="social-btn facebook-btn"
-                  onClick={handleFacebookSignUp}
-                >
+                <button className="social-btn facebook-btn" onClick={() => {}}>
                   <i
                     className="fa-brands fa-facebook"
                     style={{ color: "#3b5998" }}

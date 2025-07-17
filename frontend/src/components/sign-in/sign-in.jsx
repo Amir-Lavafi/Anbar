@@ -79,7 +79,7 @@ function SignIn() {
                     type="password"
                     id="password"
                     className="custom-input"
-                    placeholder="At least 8 characters"
+                    placeholder="At least 4 characters"
                     value={formData.password}
                     onChange={(e) =>
                       setFormData({ ...formData, password: e.target.value })
