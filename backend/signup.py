@@ -2,7 +2,7 @@ import sqlalchemy.exc
 from flask import Blueprint, request, jsonify
 from werkzeug.security import generate_password_hash
 
-from .models import Users, db
+from models import Users, db
 
 signup = Blueprint('/signup', __name__)
 
@@ -22,7 +22,7 @@ def signup_route():
     if password != confirm_password:
         return jsonify({"success": False, "error": "Passwords do not match"}), 400
     
-    hashed_password = generate_password_hash(password, method='sha256')
+    hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
 
     try:
         new_user = Users(username=username, email=email, password=hashed_password)

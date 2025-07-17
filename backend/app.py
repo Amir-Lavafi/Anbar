@@ -2,14 +2,15 @@ from flask import Flask
 from flask_cors import CORS
 from flask_login import LoginManager
 
-from .models import db, Users
-from .login import login
-from .logout import logout
-from .signup import signup
+from models import db, Users
+from login import login
+from logout import logout
+from signup import signup
 
 app = Flask(__name__)
+app.secret_key = 'your-very-secret-key'
 
-CORS(app, supports_credentials=True)
+CORS(app, origins=["http://localhost:3000"], supports_credentials=True)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

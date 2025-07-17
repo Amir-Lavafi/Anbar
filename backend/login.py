@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_login import login_user
 from werkzeug.security import check_password_hash
 
-from .models import Users
+from models import Users
 
 login = Blueprint('login', __name__)
 
