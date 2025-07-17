@@ -1,23 +1,44 @@
 import { useState } from "react";
 import { MDBBtn, MDBCard, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import warehousingDesktop from "../../assets/images/warehousing.png";
+import { login } from "../../services/auth-service";
+import toast from "react-hot-toast";
 import "./sign-in.css";
 
 function SignIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
 
-  const handleSignIn = () => {
-    console.log("Sign in attempt with:", { email, password });
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const loginPromise = new Promise(async (resolve, reject) => {
+      try {
+        const result = await login(formData);
+        resolve(result);
+      } catch (error) {
+        reject(error);
+      }
+    });
+
+    toast.promise(
+      async () => {
+        await loginPromise;
+      },
+      {
+        loading: "Signing you in",
+        success: "Welcome back!",
+        error: (err) => {
+          return (
+            err.response?.data?.error || err.message || "Something went wrong"
+          );
+        },
+      }
+    );
   };
 
-  const handleGoogleSignIn = () => {
-    console.log("Google sign in");
-  };
-
-  const handleFacebookSignIn = () => {
-    console.log("Facebook sign in");
-  };
   return (
     <div className="sign-in-container">
       <MDBCard className="sign-in-card">
@@ -32,18 +53,20 @@ function SignIn() {
                 Streamline, Organize, and Succeed.
               </p>
 
-              <div className="form-container">
+              <form className="form-container" onSubmit={handleLogin}>
                 <div className="form-group">
-                  <label className="form-label" htmlFor="email">
-                    Email
+                  <label className="form-label" htmlFor="username">
+                    User Name
                   </label>
                   <input
-                    type="email"
-                    id="email"
+                    type="text"
+                    id="username"
                     className="custom-input"
-                    placeholder="Example@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="ExampleUserName"
+                    value={formData.username}
+                    onChange={(e) =>
+                      setFormData({ ...formData, username: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -57,33 +80,29 @@ function SignIn() {
                     id="password"
                     className="custom-input"
                     placeholder="At least 8 characters"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={formData.password}
+                    onChange={(e) =>
+                      setFormData({ ...formData, password: e.target.value })
+                    }
                     required
                   />
                 </div>
 
                 <div className="forgot-password">Forgot Password?</div>
 
-                <MDBBtn className="sign-in-btn" onClick={handleSignIn}>
+                <MDBBtn className="sign-in-btn" type="submit">
                   Sign In
                 </MDBBtn>
-              </div>
+              </form>
 
               <div className="separator mb-3">Or</div>
 
               <div className="social-buttons">
-                <button
-                  className="social-btn google-btn"
-                  onClick={handleGoogleSignIn}
-                >
+                <button className="social-btn google-btn" onClick={() => {}}>
                   <i className="fa-brands fa-google"></i>
                   Google
                 </button>
-                <button
-                  className="social-btn facebook-btn"
-                  onClick={handleFacebookSignIn}
-                >
+                <button className="social-btn facebook-btn" onClick={() => {}}>
                   <i
                     className="fa-brands fa-facebook"
                     style={{ color: "#3b5998" }}
