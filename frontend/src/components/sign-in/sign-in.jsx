@@ -31,9 +31,6 @@ function SignIn() {
                 Unlock Your Warehouse's Potential. Today’s the Day to
                 Streamline, Organize, and Succeed.
               </p>
-              <p className="welcome-subtitle">
-                Sign in to Take Control of Your Operations.
-              </p>
 
               <div className="form-container">
                 <div className="form-group">
@@ -66,9 +63,7 @@ function SignIn() {
                   />
                 </div>
 
-                <div className="forgot-password">
-                  <a href="">Forgot Password?</a>
-                </div>
+                <div className="forgot-password">Forgot Password?</div>
 
                 <MDBBtn className="sign-in-btn" onClick={handleSignIn}>
                   Sign In
@@ -109,7 +104,7 @@ function SignIn() {
             <div className="warehousing-section">
               <img
                 src={warehousingDesktop}
-                alt="Warehouse management picture"
+                alt="Warehouse management"
                 className="warehousing-image"
               />
             </div>
