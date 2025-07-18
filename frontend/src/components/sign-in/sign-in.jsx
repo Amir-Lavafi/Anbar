@@ -1,18 +1,10 @@
 import { useState } from "react";
-import {
-  MDBContainer,
-  MDBInput,
-  MDBBtn,
-  MDBIcon,
-  MDBCard,
-  MDBRow,
-  MDBCol,
-} from "mdb-react-ui-kit";
-import flowers from "./assets/images/flowers.png";
-import "./App.css";
+import { MDBBtn, MDBCard, MDBRow, MDBCol } from "mdb-react-ui-kit";
+import warehousingDesktop from "../../assets/images/warehousing.png";
+import "./sign-in.css";
 
 function SignIn() {
-const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignIn = () => {
@@ -27,8 +19,8 @@ const [email, setEmail] = useState("");
     console.log("Facebook sign in");
   };
   return (
-    <div className="login-container">
-      <MDBCard className="login-card">
+    <div className="sign-in-container">
+      <MDBCard className="sign-in-card">
         <MDBRow className="g-0 card-content">
           <MDBCol className="card-col form" md="6">
             <div className="form-section">
@@ -36,17 +28,21 @@ const [email, setEmail] = useState("");
                 Welcome Back <span className="wave-emoji">👋</span>
               </h2>
               <p className="welcome-subtitle">
-                Today is a new day. It's your day. You shape it.
+                Unlock Your Warehouse's Potential. Today’s the Day to
+                Streamline, Organize, and Succeed.
               </p>
               <p className="welcome-subtitle">
-                Sign in to start managing your projects.
+                Sign in to Take Control of Your Operations.
               </p>
 
               <div className="form-container">
                 <div className="form-group">
-                  <label className="form-label">Email</label>
+                  <label className="form-label" htmlFor="email">
+                    Email
+                  </label>
                   <input
                     type="email"
+                    id="email"
                     className="custom-input"
                     placeholder="Example@email.com"
                     value={email}
@@ -56,9 +52,12 @@ const [email, setEmail] = useState("");
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Password</label>
+                  <label className="form-label" htmlFor="password">
+                    Password
+                  </label>
                   <input
                     type="password"
+                    id="password"
                     className="custom-input"
                     placeholder="At least 8 characters"
                     value={password}
@@ -68,7 +67,7 @@ const [email, setEmail] = useState("");
                 </div>
 
                 <div className="forgot-password">
-                  <a href="#forgot">Forgot Password?</a>
+                  <a href="">Forgot Password?</a>
                 </div>
 
                 <MDBBtn className="sign-in-btn" onClick={handleSignIn}>
@@ -99,7 +98,7 @@ const [email, setEmail] = useState("");
               </div>
 
               <div className="signup-link">
-                Don't you have an account? <a href="#signup">Sign up</a>
+                Don't you have an account? <a href="/sign-up">Sign up</a>
               </div>
 
               <div className="footer">© 2025 ALL RIGHTS RESERVED</div>
@@ -107,11 +106,11 @@ const [email, setEmail] = useState("");
           </MDBCol>
 
           <MDBCol className="card-col" md="6">
-            <div className="floral-section">
+            <div className="warehousing-section">
               <img
-                src={flowers}
-                alt="Floral Arrangement"
-                className="floral-image"
+                src={warehousingDesktop}
+                alt="Warehouse management picture"
+                className="warehousing-image"
               />
             </div>
           </MDBCol>
@@ -119,7 +118,6 @@ const [email, setEmail] = useState("");
       </MDBCard>
     </div>
   );
-
 }
 
 export default SignIn;
