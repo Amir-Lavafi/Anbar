@@ -122,8 +122,8 @@
 .sign-in-btn {
   width: 100%;
   padding: 1.4rem !important;
-  background: #162d3a !important;
-  color: #fff !important;
+  background: #f9c06a !important;
+  color: #000 !important;
   border: none !important;
   border-radius: 1rem !important;
   font-size: 1.6rem !important;
@@ -131,6 +131,7 @@
   transition: all 0.3s ease !important;
   margin-bottom: 3rem !important;
   box-shadow: none !important;
+  text-transform: none !important;
 }
 
 .sign-in-btn:hover {
