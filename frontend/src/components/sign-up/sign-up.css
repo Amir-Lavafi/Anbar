@@ -1,0 +1,294 @@
+.sign-up-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.sign-up-card {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 2rem !important;
+  background: #fafafa !important;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+}
+
+.card-content {
+  height: 100%;
+}
+
+.card-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warehousing-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.warehousing-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-section {
+  width: 100%;
+  max-width: 55rem !important;
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-subtitle {
+  color: #666;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+.form-container {
+  margin-top: 3rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid #d4d7e3;
+  border-radius: 1.2rem;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  background: #f7fbff;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.custom-input::placeholder {
+  color: #999;
+}
+
+.sign-up-btn {
+  width: 100%;
+  padding: 1.4rem !important;
+  background: #162d3a !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 1rem !important;
+  font-size: 1.6rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 3rem !important;
+  box-shadow: none !important;
+}
+
+.sign-up-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(44, 62, 80, 0.3);
+}
+
+.separator {
+  text-align: center;
+  position: relative;
+  color: #888;
+  font-size: 1.6rem;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  height: 1px;
+  background: #ddd;
+  position: absolute;
+  top: 50%;
+  width: 45%;
+}
+
+.separator::before {
+  left: 0;
+}
+
+.separator::after {
+  right: 0;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 1.2rem;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.social-btn:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fa-google {
+  background: linear-gradient(to bottom left, transparent 49%, #fbbc05 50%) 0
+      25%/48% 40%,
+    linear-gradient(to top left, transparent 49%, #fbbc05 50%) 0 75%/48% 40%,
+    linear-gradient(-40deg, transparent 53%, #ea4335 54%),
+    linear-gradient(45deg, transparent 46%, #4285f4 48%), #34a853;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.google-btn:hover {
+  border-color: #ea4335;
+}
+
+.facebook-btn:hover {
+  border-color: #3b5998;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 1.4rem;
+}
+
+.signup-link a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  color: #5a6fd8;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 4rem;
+  color: #999;
+  font-size: 1.3rem;
+}
+
+.star-emoji {
+  font-size: 2.2rem;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+}
+
+
+@media screen and (min-width: 1270px) {
+  .card-content {
+    height: 95vh;
+    display: flex;
+  }
+
+  .card-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .warehousing-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 40px 30px;
+  }
+
+  .welcome-title {
+    font-size: 2.3rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .sign-up-btn {
+    font-size: 1.5rem !important;
+  }
+
+  .row {
+    flex-direction: column-reverse;
+  }
+
+  .warehousing-section {
+    height: 20rem;
+  }
+
+  .social-btn {
+    min-width: 11rem !important;
+  }
+}
