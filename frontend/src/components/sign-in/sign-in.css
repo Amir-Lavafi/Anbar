@@ -1,26 +1,32 @@
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .login-container {
   width: 100%;
-  max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .login-card {
-  border-radius: 20px;
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 2rem !important;
+  background: #fafafa !important;
   overflow: hidden;
-  background: #fff;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px !important;
 }
 
+.card-content {
+  height: 100%;
+}
+
+.card-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .floral-section {
+  width: 100%;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -36,54 +42,55 @@
 }
 
 .form-section {
-  padding: 60px 40px;
+  width: 100%;
+  max-width: 55rem !important;
+  padding: 6rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #fafafa;
 }
 
 .welcome-title {
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .welcome-subtitle {
   color: #666;
-  font-size: 1rem;
-  margin-bottom: 8px;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
   line-height: 1.4;
 }
 
 .form-container {
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .form-label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
   color: #333;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1.4rem;
 }
 
 .custom-input {
   width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid #d4d7e3;
+  border-radius: 1.2rem;
+  font-size: 1.4rem;
   transition: all 0.3s ease;
-  background: white;
+  background: #f7fbff;
 }
 
 .custom-input:focus {
@@ -98,14 +105,14 @@
 
 .forgot-password {
   text-align: right;
-  margin-top: 8px;
-  margin-bottom: 25px;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .forgot-password a {
   color: #667eea;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   transition: color 0.3s ease;
 }
 
@@ -115,20 +122,19 @@
 
 .sign-in-btn {
   width: 100%;
-  padding: 14px;
-  background: #2c3e50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 30px;
+  padding: 1.4rem !important;
+  background: #162d3a !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 1rem !important;
+  font-size: 1.6rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 3rem !important;
+  box-shadow: none !important;
 }
 
 .sign-in-btn:hover {
-  background: #34495e;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(44, 62, 80, 0.3);
 }
@@ -137,6 +143,7 @@
   text-align: center;
   position: relative;
   color: #888;
+  font-size: 1.6rem;
 }
 
 .separator::before,
@@ -159,23 +166,23 @@
 
 .social-buttons {
   display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .social-btn {
   flex: 1;
-  padding: 12px;
+  padding: 1.2rem;
   border: 2px solid #e0e0e0;
   background: white;
-  border-radius: 8px;
+  border-radius: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: 0.9rem;
+  gap: 0.8rem;
+  font-size: 1.4rem;
   color: #333;
 }
 
@@ -208,9 +215,9 @@
 
 .signup-link {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2rem;
   color: #666;
-  font-size: 0.95rem;
+  font-size: 1.4rem;
 }
 
 .signup-link a {
@@ -225,10 +232,11 @@
 
 .footer {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 4rem;
   color: #999;
-  font-size: 0.85rem;
+  font-size: 1.3rem;
 }
+
 
 .wave-emoji {
   font-size: 1.8rem;
@@ -248,6 +256,29 @@
   }
 }
 
+@media screen and (min-width: 1270px) {
+  .card-content {
+    height: 95vh;
+    display: flex;
+  }
+
+  .card-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .floral-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+  }
+}
 
 @media (max-width: 768px) {
   .form-section {
@@ -255,7 +286,15 @@
   }
 
   .welcome-title {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .sign-in-btn {
+    font-size: 1.5rem !important;
   }
 
   .row {
@@ -263,10 +302,10 @@
   }
 
   .floral-section {
-    height: 15rem;
+    height: 20rem;
   }
 
-  .social-buttons {
-    flex-direction: column;
+  .social-btn {
+    min-width: 11rem !important;
   }
 }

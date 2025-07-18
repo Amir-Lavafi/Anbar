@@ -12,7 +12,7 @@ import flowers from "./assets/images/flowers.png";
 import "./App.css";
 
 function SignIn() {
-  const [email, setEmail] = useState("");
+const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignIn = () => {
@@ -29,8 +29,8 @@ function SignIn() {
   return (
     <div className="login-container">
       <MDBCard className="login-card">
-        <MDBRow className="g-0">
-          <MDBCol md="6">
+        <MDBRow className="g-0 card-content">
+          <MDBCol className="card-col form" md="6">
             <div className="form-section">
               <h2 className="welcome-title">
                 Welcome Back <span className="wave-emoji">👋</span>
@@ -71,13 +71,9 @@ function SignIn() {
                   <a href="#forgot">Forgot Password?</a>
                 </div>
 
-                <button
-                  type="button"
-                  className="sign-in-btn"
-                  onClick={handleSignIn}
-                >
+                <MDBBtn className="sign-in-btn" onClick={handleSignIn}>
                   Sign In
-                </button>
+                </MDBBtn>
               </div>
 
               <div className="separator mb-3">Or</div>
@@ -106,11 +102,11 @@ function SignIn() {
                 Don't you have an account? <a href="#signup">Sign up</a>
               </div>
 
-              <div className="footer">© 2023 ALL RIGHTS RESERVED</div>
+              <div className="footer">© 2025 ALL RIGHTS RESERVED</div>
             </div>
           </MDBCol>
 
-          <MDBCol md="6">
+          <MDBCol className="card-col" md="6">
             <div className="floral-section">
               <img
                 src={flowers}
@@ -123,6 +119,7 @@ function SignIn() {
       </MDBCard>
     </div>
   );
+
 }
 
 export default SignIn;
