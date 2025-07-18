@@ -29,7 +29,12 @@ function SignIn() {
       },
       {
         loading: "Signing you in",
-        success: "Welcome back!",
+        success: (data) => {
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 2000);
+          return "Welcome back!";
+        },
         error: (err) => {
           return (
             err.response?.data?.error || err.message || "Something went wrong"

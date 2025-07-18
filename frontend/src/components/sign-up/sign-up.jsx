@@ -31,7 +31,12 @@ function SignUp() {
       },
       {
         loading: "Signing you up",
-        success: "Welcome aboard!",
+        success: (data) => {
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 2000);
+          return "Welcome aboard!";
+        },
         error: (err) => {
           return (
             err.response?.data?.error || err.message || "Something went wrong"
