@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: anbar_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: anbar_frontend
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
